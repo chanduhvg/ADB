@@ -1,0 +1,45 @@
+This link provides an extensive description of formatting output in sqlplus, 
+including setting column widths.
+
+http://download.oracle.com/docs/cd/B19306_01/server.102/b14357/ch6.htm
+
+Below is an example of a script that contains column formatting examples.
+
+SET SERVEROUTPUT ON SIZE 4000;
+SET PAGESIZE 25;
+
+CREATE TABLE ProductDim
+(ProductKey VARCHAR2(9),
+ProductDescription VARCHAR2(50),
+Department VARCHAR2(30),
+SKUNumber VARCHAR (15),
+CONSTRAINT ProductDim_ProductKey_pk PRIMARY KEY(ProductKey));
+
+CREATE TABLE StoreDim
+(StoreKey VARCHAR2(6),
+StoreName VARCHAR2(30),
+StoreNumber VARCHAR2(6),
+City VARCHAR2(50),
+State VARCHAR2(20),
+District VARCHAR2(20),
+Region VARCHAR2(20),
+SqFt Number(6),
+CONSTRAINT StoreDim_StoreKey_pk PRIMARY KEY(StoreKey));
+
+
+COLUMN ProductKey FORMAT A10;
+COLUMN ProductDescription FORMAT A25;
+COLUMN Department FORMAT A20;
+COLUMN SKUNumber FORMAT A5;
+COLUMN StoreKey FORMAT A8;
+COLUMN StoreName FORMAT A6;
+COLUMN StoreNumber FORMAT A2;
+COLUMN City FORMAT A13;
+COLUMN State FORMAT A9;
+COLUMN District FORMAT A15;
+COLUMN Region FORMAT A8;
+COLUMN SqFt FORMAT 99999;
+
+You can format currencies like this:
+COLUMN DollarAmount FORMAT $999,999;
+

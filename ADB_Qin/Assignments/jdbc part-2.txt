@@ -1,0 +1,33 @@
+import java.sql.*;
+
+/**
+ *
+ * @author Krishna Sumanth Koyyalamudi
+ */
+public class JDBCExample {
+
+    public static void main(String[] args) {
+        String driver = "oracle.jdbc.driver.OracleDriver";
+        String url = "jdbc:oracle:thin:@localhost:1521/pdborcl";
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url, "krishna", "krish333");
+            System.out.println("Success!");
+        } catch (SQLException ex) {
+            System.out.println("Problems getting a connection");
+        }
+		
+		try {
+            PreparedStatement updatetotalhours
+                    = conn.prepareStatement(
+                            "update tblStudent set totalhours = ? where stuid = ?");
+            System.out.println("PreparedStatement created");
+            updatetotalhours.setString(1, "52");
+            updatetotalhours.setString(2, "910");
+            updatetotalhours.executeUpdate();
+            System.out.println("PreparedStatement executed");
+        } catch (SQLException ex) {
+            System.out.println("Problems with PreparedStatement");
+        }
+	}
+}

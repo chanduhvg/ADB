@@ -1,0 +1,11 @@
+create or replace procedure update_gpa
+(studentId IN NUMBER,
+ newGpa IN NUMBER)
+IS
+BEGIN
+  update tblStudent
+  set gpa = newGpa
+  where stuId = studentId;
+  commit;
+END;
+/
