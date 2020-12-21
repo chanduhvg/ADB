@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/193037903/Gift_Center.iml" filepath="$PROJECT_DIR$/.idea/modules/193037903/Gift_Center.iml" group="Gift_Center" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Gift Center/app" />
+    </modules>
+  </component>
+</project>
